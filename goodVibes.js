@@ -16,7 +16,7 @@
         }
     }
 
-    var append = function(type) {
+    var registerEvent = function(type) {
         if (~registeredEvents.indexOf(type)) {
             return;
         }
@@ -28,16 +28,18 @@
     };
 
     window.addEventListener("DOMContentLoaded", function() {
-        append("click");
+        registerEvent("click");
         [].forEach.call(document.querySelectorAll('[data-vibrate-trigger]'), function(elem) {
-            append(elem.dataset.vibrateTrigger);
+            registerEvent(elem.dataset.vibrateTrigger);
         })
+
+        document.body.addEventListener("DOMNodeInserted", function(evt) {
+            var elem = evt.target;
+            if ("vibrateTrigger" in elem.dataset) {
+                registerEvent(elem.dataset.vibrateTrigger);
+            }
+        }, false);
+
     }, false);
 
-    document.body.addEventListener("DOMNodeInserted", function(evt) {
-        var elem = evt.target;
-        if ("vibrateTrigger" in elem.dataset) {
-            append(elem.dataset.vibrateTrigger);
-        }
-    }, false);
 }());
