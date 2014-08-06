@@ -1,0 +1,10 @@
+{
+  "name": "goodVibes.js",
+  "description": "HTML5 Vibration API Simplified",
+  "version": "0.0.1",
+  "dependencies": {
+    "gulp": "^3.6.2",
+    "gulp-uglify": "^0.2.1",
+    "gulp-concat": "^2.2.0"
+  }
+}
