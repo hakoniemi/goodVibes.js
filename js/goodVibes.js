@@ -13,7 +13,6 @@
         }
 
         if (("vibrateTrigger" in elem.dataset && elem.dataset.vibrateTrigger === type) || (!("vibrateTrigger" in elem.dataset) && type === "touchend")) {
-            console.log(elem.dataset.vibrate);
             window.navigator.vibrate(JSON.parse(elem.dataset.vibrate));
         }
     };
