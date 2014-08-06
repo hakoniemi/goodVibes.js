@@ -58,7 +58,7 @@
     window.addEventListener("DOMContentLoaded", function() {
         addFastClick();
 
-        [].forEach.call(document.querySelectorAll('[data-vibrate-on]'), function(elem) {
+        [].forEach.call(document.querySelectorAll("[data-vibrate-on]"), function(elem) {
             registerEvent(elem.dataset.vibrateOn);
         });
 
