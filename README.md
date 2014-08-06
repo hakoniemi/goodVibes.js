@@ -28,12 +28,12 @@ You can pass arrays for `data-vibrate` to provide pauses in vibration. For insta
 &lt;button data-vibrate="[500, 200, 500]">500ms, pause for 200ms, and 500ms more&lt;/button>
 </pre>
 
-You can also define the event trigger for vibration as follows:
+You can also define the event that causes for vibration:
 <pre>
-&lt;button data-vibrate="200" data-vibrate-trigger="touchend">200ms vibration ontouchend&lt;/button>
+&lt;button data-vibrate="50" data-vibrate-on="touchmove">50ms vibration ontouchend&lt;/button>
 </pre>
 
-You can also add elements dynamically with `data-vibrate / data-vibrate-trigger` and they will work  as well.
+You can also add elements dynamically with `data-vibrate / data-vibrate-on` and they will work  as well.
 
 Live Demo
 ---------
