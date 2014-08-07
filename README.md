@@ -28,22 +28,22 @@ Then append the script anywhere on the page:
 Advanced Usage
 --------------
 
-*Intervals*
+###Intervals###
 You can pass arrays for `data-vibrate` to provide pauses in vibration. For instance:
 <pre>
 &lt;button data-vibrate="[500, 200, 500]">500ms, pause for 200ms, and 500ms more&lt;/button>
 </pre>
 
-*Event Listeners*
+###Event Listeners###
 You can also define the event listeners for vibration:
 <pre>
 &lt;button data-vibrate="50" data-vibrate-on="touchmove">50ms vibration ontouchmove&lt;/button>
 </pre>
 
-*Dynamic Elements*
+###Dynamic Elements###
 You can add elements dynamically with `data-vibrate / data-vibrate-on` and they will work as well.
 
-*Using Parent Element to Declare Vibration*
+###Using Parent Element to Declare Vibration###
 Instead of explicitly declaring vibration for every single element (e.g. on a list), it's possible to declare vibration properties to parent element. With simple CSS selector syntax, one cand define which child nodes will dispatch the event for vibration:
 <pre>
 &lt;ul data-vibrate="100" data-vibrate-element="li">
