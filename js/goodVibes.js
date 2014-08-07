@@ -40,6 +40,7 @@
 
             if (endElem === elemClicked) {
                 vibrate(evt, "touchend");
+                elemClicked = null;
             }
 
             evt.target.removeEventListener("touchend", vibrateEnd, false);
@@ -61,6 +62,21 @@
         [].forEach.call(document.querySelectorAll("[data-vibrate-on]"), function(elem) {
             registerEvent(elem.dataset.vibrateOn);
         });
+
+        [].forEach.call(document.querySelectorAll("[data-vibrate-element]"), function(elem) {
+            var items = elem.querySelectorAll(elem.dataset.vibrateElement);
+            [].forEach.call(items, function(item) {
+                item.dataset.vibrate = elem.dataset.vibrate;
+                if (elem.dataset.vibrateOn) {
+                    item.dataset.vibrateOn = elem.dataset.vibrateOn;
+                }
+            });
+        });
+
+
+        window.addEventListener("scroll", function() {
+            elemClicked = null;
+        }, false);
 
         document.body.addEventListener("DOMNodeInserted", function(evt) {
             var elem = evt.target;
